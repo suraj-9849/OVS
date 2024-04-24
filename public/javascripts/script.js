@@ -50,7 +50,7 @@ tl.to('#page2 #scroll h1 span', {
     scrollTrigger: {
         scroller: "#main",
         trigger: "#page2 #scroll h1",
-        scrub: 4,
+        scrub: 1,
         start: "top 100%",
         end: "top 40%"
     }
