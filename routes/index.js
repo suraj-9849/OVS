@@ -21,4 +21,9 @@ router.get('/upcoming/:coming/', function(req, res, next) {
   res.render('upcoming', { coming: coming });
 });
 
+router.get('/upcoming/search/:state',function(req,res,next){
+  var state = req.params;
+  res.render('voting',{state : state});
+});
+
 module.exports = router;
