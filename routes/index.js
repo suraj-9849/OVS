@@ -13,6 +13,9 @@ router.get('/home', function(req, res, next) {
 router.get('/vote', function(req, res, next) {
   res.render('vote');
 });
+router.get('/RealVoting', function(req, res, next) {
+  res.render('RealVoting');
+});
 
 router.get('/maps/:stateName/', function(req, res, next) {
   var stateName = req.params.stateName.toLocaleUpperCase().replace('-'," ");
