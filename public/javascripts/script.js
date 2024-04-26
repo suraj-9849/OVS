@@ -32,41 +32,48 @@ ScrollTrigger.scrollerProxy("#main", {
 var h1 = document.querySelectorAll('#page2 #scroll h1');
 
 h1.forEach(e => {
-    var h1Text = e.textContent;
-    var clutter = "";
-    var splittedText = h1Text.split("");
-    splittedText.forEach(ele => {
-        clutter += `<span>${ele}</span>`;
-    });
-    
-    e.innerHTML = clutter;
+  var h1Text = e.textContent;
+  var clutter = "";
+  var splittedText = h1Text.split("");
+  splittedText.forEach(ele => {
+    clutter += `<span>${ele}</span>`;
+  });
+
+  e.innerHTML = clutter;
 });
 
 var tl = gsap.timeline()
 
 tl.to('#page2 #scroll h1 span', {
-    color: '#3a86ff',
-    stagger: 1,
-    scrollTrigger: {
-        scroller: "#main",
-        trigger: "#page2 #scroll h1",
-        scrub: 5,
-        start: "top 100%",
-        end: "top 40%"
-    }
+  color: '#3a86ff',
+  stagger: 1,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#page2 #scroll h1",
+    scrub: 5,
+    start: "top 100%",
+    end: "top 40%"
+  }
 });
 
-tl.from("#page2 img",{
-    scale:0,
-    opacity:0,
-    scrollTrigger: {
-        scroller: "#main",
-        trigger: "#page2  img",
-        scrub: 1,
-        // markers:true,
-        start: "top 100%",
-        end: "top 40%"
-    }
+tl.from("#page2 img", {
+  scale: 0,
+  opacity: 0,
+  scrollTrigger: {
+    scroller: "#main",
+    trigger: "#page2  img",
+    scrub: 1,
+    // markers:true,
+    start: "top 100%",
+    end: "top 40%"
+  }
 })
+gsap.from("#text", {
+  opacity: 0,
+  y: 150,
+  duration: 1.1,
+  scrub: 2,
+})
+
 
 
