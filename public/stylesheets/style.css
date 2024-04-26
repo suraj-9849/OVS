@@ -53,8 +53,6 @@ html, body {
   animation-iteration-count: infinite;
 }
 
-
-
 #img-scroll::-webkit-scrollbar {
   background-color: transparent;
 }

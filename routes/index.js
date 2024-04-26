@@ -12,10 +12,11 @@ router.get('/vote', function(req, res, next) {
   res.render('vote');
 });
 
-router.get('/map/:stateName/', function(req, res, next) {
-  var stateName = req.params.stateName;
+router.get('/maps/:stateName/', function(req, res, next) {
+  var stateName = req.params.stateName.toLocaleUpperCase().replace('-'," ");
   res.render('map', { state: stateName });
 });
+
 router.get('/upcoming/:coming/', function(req, res, next) {
   var coming = req.params.coming.toLocaleUpperCase().replace('-'," ");
   res.render('upcoming', { coming: coming });
