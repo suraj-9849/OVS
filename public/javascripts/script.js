@@ -1,4 +1,5 @@
-gsap.registerPlugin(ScrollTrigger);
+const Locomotive = () =>{
+  gsap.registerPlugin(ScrollTrigger);
 
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("#main"),
@@ -27,6 +28,8 @@ ScrollTrigger.scrollerProxy("#main", {
     };
   }
 });
+}
+Locomotive();
 
 
 var h1 = document.querySelectorAll('#page2 #scroll h1');
