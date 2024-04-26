@@ -10,6 +10,7 @@
     <div class="flex items-center flex-col justify-center bg-red-200 p-5">
       <div class="selectthestate flex flex-col">
         <label for="select" class="text-3xl font-bold">Enter the State</label>
+        <button type="button">submit </button>
         <input
           type="text"
           class="rounded-lg p-3 outline-blue-300 w-96"
@@ -32,5 +33,16 @@
         </div>
       </div>
     </div>
+    <script>
+      let btn = document.getElementById("button");
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let state = (document.getElementById("select")).value;
+        console.log(state);
+        const searchUrl = `/upcoming/search/${state}`;
+        window.location.href = searchUrl;
+      })
+  
+    </script>
   </body>
 </html>
