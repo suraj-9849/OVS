@@ -67,15 +67,7 @@ html, body {
       transform: translateX(-80%);
   }
 }
-#text{
-  text-align: center;
-    font-size: 60px;
-    font-weight: 600; 
-    position:relative;
-    left: 7px;
-    top: 14px;
-    font-size: 78px;
-  }
+
 
 
 

@@ -8,6 +8,8 @@ router.get('/', function(req, res, next) {
 router.get('/home', function(req, res, next) {
   res.render('index');
 });
+
+
 router.get('/vote', function(req, res, next) {
   res.render('vote');
 });

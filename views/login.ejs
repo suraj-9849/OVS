@@ -41,7 +41,7 @@
 <body class="flex items-center justify-center ">
     <div class="flex-container bg-zinc-100 flex items-center justify-center shadow-lg ">
         <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-            <h1 class="text-3xl font-extrabold text-center mb-4">love-day</h1>
+            <h1 class="text-3xl font-extrabold text-center mb-4">E-VoteHub</h1>
             <h2 class="text-2xl font-extrabold text-center mb-4">Register</h2>
             <p class="text-center text-gray-600 mb-4">Signup now and get access to vote.</p>
 
@@ -53,7 +53,7 @@
                     </div>
                     <div>
                         <label class="form-label text-sm text-gray-600">Lastname</label>
-                        <input class="form-input w-full border" type="text" required>
+                        <input class="form-input w-full border Lastname " type="text" required>
                     </div>
                 </div>
 
@@ -90,11 +90,15 @@
     </div>
 
     <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            window.location.href = '/home';
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                var lastname = document.querySelector(".Lastname").value;
+                window.location.href = '/home';
+            });
         });
     </script>
+    
 </body>
 
 </html>
