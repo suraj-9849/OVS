@@ -2,100 +2,117 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting Details-Online Voting System</title>
-    <style>
-        .card {
-            width: 250px;
-            height: 300px;
-            background-image: linear-gradient(144deg, #8608b4, #492fed 60%, #bd6fda);
-            border: none;
-            border-radius: 10px;
-            padding: 10px;
-            position: relative;
-            margin: auto;
-            font-family: inherit;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voting Details-Online Voting System</title>
+  <style>
+    .card {
+      width: 250px;
+      height: 300px;
+      background-image: linear-gradient(144deg, #8608b4, #492fed 60%, #bd6fda);
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      position: relative;
+      margin: auto;
+      font-family: inherit;
+    }
 
-        .card span {
-            font-weight: 600;
-            color: white;
-            text-align: center;
-            display: block;
-            padding-top: 10px;
-            font-size: 1.3em;
-        }
+    .card span {
+      font-weight: 600;
+      color: white;
+      text-align: center;
+      display: block;
+      padding-top: 10px;
+      font-size: 1.3em;
+    }
 
-        .card .job {
-            font-weight: 400;
-            color: white;
-            display: block;
-            text-align: center;
-            padding-top: 5px;
-            font-size: 1em;
-        }
+    .card .job {
+      font-weight: 400;
+      color: white;
+      display: block;
+      text-align: center;
+      padding-top: 5px;
+      font-size: 1em;
+    }
 
-        .card .img {
-            width: 70px;
-            height: 70px;
-            background: #e8e8e8;
-            border-radius: 100%;
-            margin: auto;
-            margin-top: 20px;
-        }
+    .card .img {
+      width: 70px;
+      height: 70px;
+      background: #e8e8e8;
+      border-radius: 100%;
+      margin: auto;
+      margin-top: 20px;
+    }
 
-        .card button {
-            padding: 8px 25px;
-            display: block;
-            margin: auto;
-            border-radius: 8px;
-            border: none;
-            margin-top: 30px;
-            background: #e8e8e8;
-            color: #111111;
-            font-weight: 600;
-        }
+    .card button {
+      padding: 8px 25px;
+      display: block;
+      margin: auto;
+      border-radius: 8px;
+      border: none;
+      margin-top: 30px;
+      background: #e8e8e8;
+      color: #111111;
+      font-weight: 600;
+    }
 
-        .card button:hover {
-            background: #212121;
-            color: #ffffff;
-        }
-
-       
-   </style>
-    <script src="https://cdn.tailwindcss.com"></script>
+    .card button:hover {
+      background: #212121;
+      color: #ffffff;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="flex items-center justify-center flex-col gap-10 font-[gilroy]" >
-    <h1 class="mt-10 font-semibold text-4xl uppercase">government of <%=state.state%></h1>
-    <div class="candidates flex items-center flex-wrap shrink-0 gap-5 w-[80vw] ">
-    </div>
-    <button class="voteme bg-blue-500 text-white px-4 py-2 rounded-full" ><a href="/RealVoting">Vote for the Above Candidates</a></button>
-    
-    <script>
-        let candidatesContainer = document.querySelector(".candidates");
-        let candidates = ['ANUMULA REVANTH REDDY', 'K. CHANDRASEKHAR RAO', 'BANDI SANJAY KUMAR', 'KALVAKUNTLA TARAKA RAMA RAO', 'MOHAMMED AZHARUDDIN','KUNA PANDU VIVEKANAND','CHAMAKURA MALLA REDDY'];
+<body class="flex items-center justify-center flex-col gap-10 font-[gilroy]">
+  <h1 class="mt-10 font-semibold text-4xl uppercase" id="gov">government of <%=state%>
+  </h1>
+  <div class="candidates flex items-center flex-wrap shrink-0 gap-5 w-[80vw] ">
+  </div>
+  <button class="voteme bg-blue-500 text-white px-4 py-2 rounded-full"><a href="/RealVoting">Vote for the Above
+      Candidates</a></button>
 
-        let max = 7;
-        let min = 3;
-        let random = Math.floor(Math.random() * (max - min + 1)) + min;
-        let card = '';
+  <script>
+    let h1 = document.getElementById("gov");
+    const state = h1.innerText;
+    const val = state.length;
+    console.log(state);
+    let candidatesContainer = document.querySelector(".candidates");
+    let candidates = "";
+    let stateName = state.toLowerCase().substring(14,val);
+    console.log(stateName);
+    if (stateName== 'telangana') {
+      candidates = ['ANUMULA REVANTH REDDY', 'K. CHANDRASEKHAR RAO', 'BANDI SANJAY KUMAR', 'KALVAKUNTLA TARAKA RAMA RAO', 'MOHAMMED AZHARUDDIN', 'KUNA PANDU VIVEKANAND', 'CHAMAKURA MALLA REDDY'];
+    }
+    else if(stateName == 'andhrapradesh'||stateName == 'andhra-pradesh'){
+      candidates =['Pawan Kalyan', "ChandraBabu Naidu",'jagan Mohan reddy','Lokesh','BalaKrishna','Ambati rambabu',
+    'Atcha nnaidu'] ;
+    }
+    else {
+      candidates =  ['Sathya', "Suraj", "Charan", "Prythvi", "Venky", "Karthik", "Hema"];
+    }
+  
+    let max = 7;
+    let min = 3;
+    let random = Math.floor(Math.random() * (max - min + 1)) + min;
+    let card = '';
 
-        for (let i = 0; i < random; i++) {
-            card += `<div class="card">
+    for (let i = 0; i < random; i++) {
+      card += `<div class="card">
                         <div class="card-border-top"></div>
                         <div class="img"></div>
                         <span >${candidates[i]}</span>
                         <p class="job">MLA</p>
                         <button>Details</button>
                     </div>`;
-        }
+    }
 
-        candidatesContainer.innerHTML = card;
-    </script>
+    candidatesContainer.innerHTML = card;
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="../public/javascripts/voting.js"></script>
 </body>
+
 </html>

@@ -28,7 +28,7 @@ router.get('/upcoming/:coming/', function(req, res, next) {
 });
 
 router.get('/upcoming/search/:state',function(req,res,next){
-  var state = req.params;
+  var state = req.params.state;
   res.render('voting',{state : state});
 });
 
