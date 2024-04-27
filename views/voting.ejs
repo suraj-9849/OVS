@@ -8,11 +8,11 @@
     <style>
         .card {
             width: 250px;
-            height: 254px;
+            height: 300px;
             background-image: linear-gradient(144deg, #8608b4, #492fed 60%, #bd6fda);
             border: none;
             border-radius: 10px;
-            padding-top: 10px;
+            padding: 10px;
             position: relative;
             margin: auto;
             font-family: inherit;
@@ -72,28 +72,29 @@
     <div class="candidates flex items-center flex-wrap shrink-0 gap-5 w-[80vw] ">
     </div>
     <button class="voteme bg-blue-500 text-white px-4 py-2 rounded-full" ><a href="/RealVoting">Vote for the Above Candidates</a></button>
-  
+    
     <script>
-        let candidates = document.getElementsByClassName("candidates");
-        let card = `<div class="card">
-                    <div class="card-border-top"></div>
-                    <div class="img"></div>
-                    <span>KTR</span>
-                    <p class="job">MLA</p>
-                    <button>Details</button>
-                  </div>`;
+        let candidatesContainer = document.querySelector(".candidates");
+        let candidates = ['ANUMULA REVANTH REDDY', 'K. CHANDRASEKHAR RAO', 'BANDI SANJAY KUMAR', 'KALVAKUNTLA TARAKA RAMA RAO', 'MOHAMMED AZHARUDDIN','KUNA PANDU VIVEKANAND','CHAMAKURA MALLA REDDY'];
+
         let max = 7;
         let min = 3;
         let random = Math.floor(Math.random() * (max - min + 1)) + min;
-        let yo = '';
-    
-        for (let i = 1; i <= random; i++) {
-            yo += card;
+        let card = '';
+
+        for (let i = 0; i < random; i++) {
+            card += `<div class="card">
+                        <div class="card-border-top"></div>
+                        <div class="img"></div>
+                        <span >${candidates[i]}</span>
+                        <p class="job">MLA</p>
+                        <button>Details</button>
+                    </div>`;
         }
 
-        candidates[0].innerHTML = yo;
+        candidatesContainer.innerHTML = card;
     </script>
-    
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="../public/javascripts/voting.js"></script>
 </body>
