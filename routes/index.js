@@ -32,4 +32,11 @@ router.get('/upcoming/search/:state',function(req,res,next){
   res.render('voting',{state : state});
 });
 
+
+router.get('/CandDetails', (req, res) => {
+  let name = req.query.details; 
+  // console.log(name);
+  res.render('CandDetails', { name: name });
+});
+
 module.exports = router;
