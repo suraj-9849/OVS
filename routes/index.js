@@ -14,8 +14,13 @@ router.get('/vote', function(req, res, next) {
   res.render('vote');
 });
 router.get('/RealVoting', function(req, res, next) {
-  res.render('RealVoting');
+  const random = parseInt(req.query.random);
+  const stateName = req.query.stateName;
+  console.log(stateName);
+  console.log(random);
+  res.render('RealVoting', { random: random, stateName: stateName });
 });
+
 
 router.get('/maps/:stateName/', function(req, res, next) {
   var stateName = req.params.stateName.toLocaleUpperCase().replace('-'," ");

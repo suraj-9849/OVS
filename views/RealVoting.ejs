@@ -6,6 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
+        .card {
+            width: 250px;
+            height: 254px;
+            background-image: linear-gradient(144deg, #8608b4, #492fed 60%, #bd6fda);
+            border: none;
+            border-radius: 10px;
+            padding-top: 10px;
+            position: relative;
+            margin: auto;
+            font-family: inherit;
+        }
+
+        .card span {
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            display: block;
+            padding-top: 10px;
+            font-size: 1.3em;
+        }
+
+        .card .job {
+            font-weight: 400;
+            color: white;
+            display: block;
+            text-align: center;
+            padding-top: 5px;
+            font-size: 1em;
+        }
+
+        .card .img {
+            width: 70px;
+            height: 70px;
+            background: #e8e8e8;
+            border-radius: 100%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .card button {
+            padding: 8px 25px;
+            display: block;
+            margin: auto;
+            border-radius: 8px;
+            border: none;
+            margin-top: 30px;
+            background: #e8e8e8;
+            color: #111111;
+            font-weight: 600;
+        }
+
+        .card button:hover {
+            background: #212121;
+            color: #ffffff;
+        }
+
+       
+
         body {
             font: gilroy;
         }
@@ -147,6 +206,8 @@
             }
         }
     </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -181,8 +242,12 @@
             <button class="submit">Submit</button>
             <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
         </form>
-
+        <hr>
+   <div class="state"><%=stateName%></div>
+   <div><%=random%></div>
     </div>
+    <script>
+      </script>
 </body>
 
 </html>
