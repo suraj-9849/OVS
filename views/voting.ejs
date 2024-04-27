@@ -62,17 +62,21 @@
       color: #ffffff;
     }
   </style>
+  
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="flex items-center justify-center flex-col gap-10 font-[gilroy]">
+<body>
+  <div id="main" class="flex items-center justify-center flex-col gap-10 font-[gilroy]">
+
   <h1 class="mt-10 font-semibold text-4xl uppercase" id="gov">government of <%=state%>
   </h1>
   <div class="candidates flex items-center flex-wrap shrink-0 gap-5 w-[80vw] ">
   </div>
-  <button class="voteme bg-blue-500 text-white px-4 py-2 rounded-full"><a href="/RealVoting">Vote for the Above
-      Candidates</a></button>
-
+  <button class="voteme bg-blue-500 text-white px-4 py-2 rounded-full">
+    <a href="/RealVoting">Vote for the Above Candidates</a>
+    </button>
+    </div>
   <script>
     let h1 = document.getElementById("gov");
     const state = h1.innerText;
@@ -112,9 +116,7 @@
 
     candidatesContainer.innerHTML = card;
   </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="../public/javascripts/voting.js"></script>
 </body>
-
 </html>
