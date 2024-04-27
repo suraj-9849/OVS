@@ -15,13 +15,13 @@
             flex-direction: column;
             gap: 10px;
             justify-content: center;
-            min-width: 90vw;
-            align-items: center;
-            max-width: 350px;
+            min-width: 43vw;
+            max-width: 257px;
             background-color: #fff;
             padding: 20px;
             border-radius: 20px;
             position: relative;
+            border: 1px solid black;
         }
 
         .title {
@@ -87,7 +87,7 @@
         }
 
         .form label .input {
-            width: 160%;
+            width: 90%;
             padding: 10px 10px 20px 10px;
             outline: 0;
             border: 1px solid rgba(105, 105, 105, 0.397);
@@ -121,6 +121,7 @@
         }
 
         .submit {
+            width: 80%;
             border: none;
             outline: none;
             background-color: royalblue;
@@ -145,6 +146,11 @@
                 transform: scale(1.8);
                 opacity: 0;
             }
+        }
+        #main{
+            display: flex;
+           flex-direction: row;
+           justify-content: space-around;
         }
     </style>
 </head>
