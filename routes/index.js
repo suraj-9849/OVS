@@ -58,7 +58,9 @@ router.get('/CandDetails', (req, res) => {
 });
 
 router.get('/LastVoting', function (req, res, next) {
-  res.render('LastVoting');
+  const random = parseInt(req.query.random);
+  const stateName = req.query.state;
+  res.render('LastVoting', { random: random, stateName: stateName });
 });
 
 module.exports = router;

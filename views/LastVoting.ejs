@@ -1,10 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-</body>
+
+    <style>
+      .card {
+        width: 190px;
+        height: 254px;
+        background: #3405a3;
+        border-radius: 15px;
+        box-shadow: 1px 5px 60px 0px #100a886b;
+      }
+
+      .card .card-border-top {
+        width: 60%;
+        height: 3%;
+        background: #6b64f3;
+        margin: auto;
+        border-radius: 0px 0px 15px 15px;
+      }
+
+      .card span {
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        display: block;
+        padding-top: 10px;
+        font-size: 16px;
+      }
+
+      .card .job {
+        font-weight: 400;
+        color: white;
+        display: block;
+        text-align: center;
+        padding-top: 3px;
+        font-size: 12px;
+      }
+
+      .card .img {
+        width: 70px;
+        height: 80px;
+        background: #6b64f3;
+        border-radius: 15px;
+        margin: auto;
+        margin-top: 25px;
+      }
+
+      .card button {
+        padding: 8px 25px;
+        display: block;
+        margin: auto;
+        border-radius: 8px;
+        border: none;
+        margin-top: 30px;
+        background: #6b64f3;
+        color: white;
+        font-weight: 600;
+      }
+
+      .card button:hover {
+        background: #534bf3;
+      }
+    </style>
+      <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="main">
+      <div id="container" class="flex items-center justify-center min-h-screen flex-col font-[gilroy]">
+      <h1 class="mt-4 mb-10 font-semibold text-4xl uppercase" id="gov"> government of <%=stateName%> </h1>
+      <div
+        class="candidates flex items-center flex-wrap shrink-0 gap-10 w-[80vw] bg-red-200 p-10 justify-center rounded-md"
+      ></div>
+    </div>
+    </div>
+    <script>
+          let h1 = document.getElementById("gov");
+      const state = h1.innerText;
+      const val = state.length;
+      console.log(state);
+      let candidatesContainer = document.querySelector(".candidates");
+      let candidates = "";
+      let stateName = state.toLowerCase().substring(14, val);
+      console.log(stateName);
+      if (stateName == "telangana") {
+        candidates = [
+          "ANUMULA REVANTH REDDY",
+          "K. CHANDRASEKHAR RAO",
+          "BANDI SANJAY KUMAR",
+          "KALVAKUNTLA TARAKA RAMA RAO",
+          "MOHAMMED AZHARUDDIN",
+          "KUNA PANDU VIVEKANAND",
+          "CHAMAKURA MALLA REDDY",
+        ];
+      } else if (
+        stateName == "andhrapradesh" ||
+        stateName == "andhra-pradesh"
+      ) {
+        candidates = [
+          "Pawan Kalyan",
+          "ChandraBabu Naidu",
+          "jagan Mohan reddy",
+          "Lokesh",
+          "BalaKrishna",
+          "Ambati rambabu",
+          "Atcha nnaidu",
+        ];
+      } else {
+        candidates = [
+          "Sathya",
+          "Suraj",
+          "Charan",
+          "Prythvi",
+          "Venky",
+          "Karthik",
+          "Hema",
+        ];
+      }
+      let randomVal = <%= random %>;
+      let yo = '';
+      
+      for (let i = 0; i < randomVal; i++) {
+          yo += `<div class="card">
+          <div class="card-border-top"></div>
+          <div class="img"></div>
+          <span class = 'uppercase'> ${candidates[i]} </span>
+          <p class="job"> MLA </p>
+          <button> Vote </button>
+      </div>`;
+      }
+      
+      candidatesContainer.innerHTML = yo;
+  </script>
+  </body>
 </html>
