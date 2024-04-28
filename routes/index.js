@@ -4,17 +4,26 @@ var express = require('express');
 var router = express.Router();
 
 let connect = mongoose.connect('mongodb+srv://suraj:suraj123@cluster0.cbu73ke.mongodb.net/votes');
-router.get('/', function(req, res, next) {
-  const { firstname, lastname, email, password } = req.body;
+
+router.get('/',function(req,res,next){
+  res.render('login');
+})
+router.get('/save', async function(req, res, next) {
+  const { firstname, lastname, email, password ,aadhar , pancard } = req.body;
 
   const vote = new Vote({ 
     firstname: firstname,
     lastname: lastname,
     email: email,
-    password: password
+    password: password,
+    aadhar:aadhar,
+    pancard:pancard
   });
-   vote.save()
-  res.render('login');
+ 
+  const savedVote = await  vote.save();
+  console.log(savedVote);
+  
+  res.render('index');
 });
 
 router.get('/home', function(req, res, next) {
