@@ -9,28 +9,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        body, html {
+        body,
+        html {
             height: 100vh;
             overflow: hidden;
         }
+
         .flex-container {
             height: 100%;
             overflow: auto;
-            scrollbar-width: none; 
-            -ms-overflow-style: none; 
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
+
         .flex-container::-webkit-scrollbar {
-            display: none; 
+            display: none;
         }
+
         .form-label {
             font-size: 0.9rem;
             margin-bottom: 0.25rem;
         }
+
         .form-input {
             padding: 0.5rem;
             font-size: 0.9rem;
             border-radius: 0.25rem;
         }
+
         .form-button {
             padding: 0.5rem;
             font-size: 0.9rem;
@@ -45,7 +51,7 @@
             <h2 class="text-2xl font-extrabold text-center mb-4">Register</h2>
             <p class="text-center text-gray-600 mb-4">Signup now and get access to vote.</p>
 
-            <form id="registrationForm">
+            <form id="registrationForm" method="get" action="/save">
                 <div class="grid grid-cols-2 gap-2 mb-2">
                     <div>
                         <label class="form-label text-sm text-gray-600">Firstname</label>
@@ -79,26 +85,23 @@
 
                 <div class="mb-4">
                     <label class="form-label text-sm text-gray-600">Confirm password</label>
-                    <input  name="password"class="form-input w-full border" type="password" required>
+                    <input name="" class="form-input w-full border" type="password" required>
                 </div>
 
-                <button class="form-button w-full bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700" type="submit">Submit</button>
+                <button
+                    class="form-button w-full bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700"
+                    type="submit">Submit</button>
             </form>
 
-            <p class="text-center text-gray-600 mt-2">Already have an account? <a href="#" class="text-blue-500">Sign in</a></p>
+            <p class="text-center text-gray-600 mt-2">Already have an account? <a href="#" class="text-blue-500">Sign
+                    in</a></p>
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById('registrationForm').addEventListener('submit', function(event) {
-                event.preventDefault(); 
-                var lastname = document.querySelector(".Lastname").value;
-                window.location.href = '/save';
-            });
-        });
-    </script>
+
     
+
+
 </body>
 
 </html>

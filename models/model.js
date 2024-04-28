@@ -6,8 +6,8 @@ const VoterSchema = new Schema({
   lastname: { type: String },
   email: { type: String },
   aadhar: { type: Number },
-  pancard: { type: Number },
-  password:{type:Number}
+  pancard: { type:Number},
+  password:{type: Number}
 });
 
 module.exports = mongoose.model("Vote", VoterSchema);
