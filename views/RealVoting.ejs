@@ -212,7 +212,7 @@
 
 <body>
     <div id="main">
-        <form class="form">
+        <form class="form flex items-center justify-center">
             <p class="title">Voting in progress</p>
             <p class="message">you're activity is being monitered </p>
 
@@ -239,15 +239,15 @@
                 <input required="" placeholder="" type="password" class="input">
                 <span>Confirm password</span>
             </label>
-            <button class="submit">Submit</button>
+            <button class="submit text-center ">Submit</button>
             <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
         </form>
         <hr>
-   <div class="state"><%=stateName%></div>
+        <div class="state"><%=random%></div>
+   <div class="state uppercase"><%=stateName%></div>
     </div>
     <script>
-        console.log(stateNames);
-        console.log(randomVal); 
+
       </script>
 </body>
 

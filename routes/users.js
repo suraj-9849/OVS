@@ -1,8 +1,18 @@
 const mongoose = require('mongoose');
+const Vote = require('../models/model')
+var express = require('express');
+var router = express.Router();
 
-mongoose.connect('mongodb://127.0.0.1:27017/OVS');
+let connect = mongoose.connect('mongodb+srv://suraj:suraj123@cluster0.cbu73ke.mongodb.net/votes');
 
-  const userSchema = new mongoose.Schema({
-    
-  });
- module.exports = mongoose.model('User', userSchema);
+router.get('/', function(req, res, next) {
+  const vote = new Vote({ 
+     firstname: 'Suraj',
+    lastname: 'Lohit',
+    email: 'suraj123@cluster0.c',
+    aadhar: 12345,})
+    vote.save()
+    console.log('Connected Bhai');
+});
+
+module.exports = router;
