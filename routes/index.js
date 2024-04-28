@@ -3,13 +3,19 @@ const Vote = require('../models/model')
 var express = require('express');
 var router = express.Router();
 
-let connect = mongoose.connect('mongodb+srv://suraj:suraj123@cluster0.cbu73ke.mongodb.net/votes');
+mongoose.connect('mongodb+srv://suraj:suraj123@cluster0.cbu73ke.mongodb.net/votes', { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('Connected to MongoDB');
+});
 
 router.get('/', function (req, res, next) {
   res.render('login');
 })
 router.get('/save', async function (req, res) {
-  const data = { firstname: req.query.firstname, lastname: req.query.lastname, email: req.query.email, password: req.query.password, aadhar: req.query.password, pancard: req.query.pancard };
+  const data = { firstname: req.query.firstname, lastname: req.query.lastname, email: req.query.email, password: req.query.password, aadhar: req.query.aadhar, pancard: req.query.pancard };
 
   const vote = new Vote(data);
 
@@ -27,12 +33,13 @@ router.get('/home', function (req, res, next) {
 router.get('/vote', function (req, res, next) {
   res.render('vote');
 });
-router.get('/Reverification', function (req, res, next) {
-  const random = parseInt(req.query.random);
-  const stateName = req.query.stateName;
-  console.log(stateName);
-  console.log(random);
-  res.render('Reverification', { random: random, stateName: stateName });
+
+
+router.get('/Reverification', async function (req, res, next) {
+  const { firstname, lastname, email, password } = req.query;
+  let random = req.query.random
+  let stateName = req.query.stateName
+  res.render("Reverification",{random:random,stateName:stateName})
 });
 
 

@@ -4,259 +4,212 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  /> -->
     <style>
-      .card {
-        width: 250px;
-        height: 254px;
-        background-image: linear-gradient(
-          144deg,
-          #8608b4,
-          #492fed 60%,
-          #bd6fda
-        );
-        border: none;
-        border-radius: 10px;
-        padding-top: 10px;
-        position: relative;
-        margin: auto;
-        font-family: inherit;
-      }
-
-      .card span {
-        font-weight: 600;
-        color: white;
-        text-align: center;
-        display: block;
-        padding-top: 10px;
-        font-size: 1.3em;
-      }
-
-      .card .job {
-        font-weight: 400;
-        color: white;
-        display: block;
-        text-align: center;
-        padding-top: 5px;
-        font-size: 1em;
-      }
-
-      .card .img {
-        width: 70px;
-        height: 70px;
-        background: #e8e8e8;
-        border-radius: 100%;
-        margin: auto;
-        margin-top: 20px;
-      }
-
-      .card button {
-        padding: 8px 25px;
-        display: block;
-        margin: auto;
-        border-radius: 8px;
-        border: none;
-        margin-top: 30px;
-        background: #e8e8e8;
-        color: #111111;
-        font-weight: 600;
-      }
-
-      .card button:hover {
-        background: #212121;
-        color: #ffffff;
-      }
-
-      body {
-        font: gilroy;
-      }
-
-      .form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        max-width: 350px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 20px;
-        position: relative;
-      }
-
-      .title {
-        font-size: 28px;
-        color: royalblue;
-        font-weight: 600;
-        letter-spacing: -1px;
-        position: relative;
+      #main{
         display: flex;
         align-items: center;
-        padding-left: 30px;
-      }
+        justify-content: center;
+        min-height: 100vh;
 
-      .title::before,
-      .title::after {
-        position: absolute;
-        content: "";
-        height: 16px;
-        width: 16px;
-        border-radius: 50%;
-        left: 0px;
-        background-color: royalblue;
       }
+     /* CSS for the registration form */
 
-      .title::before {
-        width: 18px;
-        height: 18px;
-        background-color: royalblue;
-      }
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
 
-      .title::after {
-        width: 18px;
-        height: 18px;
-        animation: pulse 1s linear infinite;
-      }
+.title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
 
-      .message,
-      .signin {
-        color: rgba(88, 87, 87, 0.822);
-        font-size: 14px;
-      }
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
 
-      .signin {
-        text-align: center;
-      }
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
 
-      .signin a {
-        color: royalblue;
-      }
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
 
-      .signin a:hover {
-        text-decoration: underline royalblue;
-      }
+.message,
+.signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
 
-      .flex {
-        display: flex;
-        width: 100%;
-        gap: 6px;
-      }
+.signin {
+  text-align: center;
+}
 
-      .form label {
-        position: relative;
-      }
+.signin a {
+  color: royalblue;
+}
 
-      .form label .input {
-        width: 100%;
-        padding: 10px 10px 20px 10px;
-        outline: 0;
-        border: 1px solid rgba(105, 105, 105, 0.397);
-        border-radius: 10px;
-      }
+.signin a:hover {
+  text-decoration: underline royalblue;
+}
 
-      .form label .input + span {
-        position: absolute;
-        left: 10px;
-        top: 15px;
-        color: grey;
-        font-size: 0.9em;
-        cursor: text;
-        transition: 0.3s ease;
-      }
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
 
-      .form label .input:placeholder-shown + span {
-        top: 15px;
-        font-size: 0.9em;
-      }
+.form label {
+  position: relative;
+}
 
-      .form label .input:focus + span,
-      .form label .input:valid + span {
-        top: 30px;
-        font-size: 0.7em;
-        font-weight: 600;
-      }
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
 
-      .form label .input:valid + span {
-        color: green;
-      }
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
 
-      .submit {
-        border: none;
-        outline: none;
-        background-color: royalblue;
-        padding: 10px;
-        border-radius: 10px;
-        color: #fff;
-        font-size: 16px;
-        transform: 0.3s ease;
-      }
+/* Ensure placeholder text is displayed properly */
+.form label .input::placeholder {
+  color: rgba(0, 0, 0, 0.5); /* Adjust placeholder color as needed */
+}
 
-      .submit:hover {
-        background-color: rgb(56, 90, 194);
-      }
+/* Hide placeholder text when input is focused */
+.form label .input:focus::placeholder {
+  color: transparent;
+}
 
-      @keyframes pulse {
-        from {
-          transform: scale(0.9);
-          opacity: 1;
-        }
+.form label .input:focus + span,
+.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
 
-        to {
-          transform: scale(1.8);
-          opacity: 0;
-        }
-      }
+.form label .input:valid + span {
+  color: green;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: 0.3s ease;
+}
+
+.submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
     </style>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+  
   </head>
   <body>
-    <div id="main" class=" flex items-center justify-center min-h-screen">
-      <form class="form flex items-center justify-center">
-        <p class="title">Voting in progress</p>
-        <p class="message">you're activity is being monitered</p>
-
-        <label>
-          <input required="" placeholder="" type="text" class="input" />
-          <span>Firstname</span>
-        </label>
-
-        <label>
-          <input required="" placeholder="" type="text" class="input" />
-          <span>Lastname</span>
-        </label>
-
-        <label>
-          <input required="" placeholder="" type="email" class="input" />
-          <span>Email</span>
-        </label>
-
-        <label>
-          <input required="" placeholder="" type="password" class="input" />
-          <span>Password</span>
-        </label>
-        <label>
-          <input required="" placeholder="" type="password" class="input" />
-          <span>Confirm password</span>
-        </label>
-        <button class="submit text-center">Submit</button>
-        <p class="signin">Already have an acount ? <a href="#">Signin</a></p>
-      </form>
-    </div>
+    <div id="main" class="flex items-center justify-center min-h-screen">
+      <form class="form">
+        <p class="title">Register </p>
+        <p class="message">Signup now and get full access to our app. </p>
+            <div class="flex">
+            <label>
+                <input name="firstname" required="" placeholder="" type="text" class="input ">
+                <span>Firstname</span>
+            </label>
     
+            <label>
+                <input name="lastname" required="" placeholder="" type="text" class="input ">
+                <span>Lastname</span>
+            </label>
+        </div>  
+                
+        <label>
+            <input name="email" required="" placeholder="" type="email" class="input ">
+            <span>Email</span>
+        </label> 
+            
+        <label>
+            <input name="password" required="" placeholder="" type="password" class="input ">
+            <span>Password</span>
+        </label>
+        <label>
+            <input name="password" required="" placeholder="" type="password" class="input ">
+            <span>Confirm password</span>
+        </label>
+        <button class="submit">Submit</button>
+        <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
+    </form>
+    </div>
+
     <script>
-        let randomName = <%= random %>;
-        let state = '<%= stateName %>'; 
-        console.log(randomName);
-        console.log(state);
+          let randomName = <%= random %>;
+          let state = '<%= stateName %>';
+          console.log(randomName);
+          console.log(state);
 
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelector('.form').addEventListener('submit', async function(event) {
-            event.preventDefault(); 
-            window.location.href = `/LastVoting?random=${randomName}&state=${state}`;
-        });
-    });
-</script>
+          
 
-</body>
+      document.addEventListener("DOMContentLoaded", function() {
+          document.querySelector('.form').addEventListener('submit', async function(event) {
+              event.preventDefault();
+              window.location.href = `/LastVoting?random=${randomName}&state=${state}`;
+          });
+      });
+    </script>
+  </body>
 </html>
