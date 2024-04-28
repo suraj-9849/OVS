@@ -68,7 +68,7 @@
     <h1 class="mt-10 font-semibold text-4xl uppercase"><%= coming %></h1>
     <div class="candidates flex items-center flex-wrap shrink-0 gap-5 w-[80vw] ">
     </div>
-    <button class="voteme bg-blue-500 text-white px-4 py-2 rounded-full" ><a href="/RealVoting">Vote for the Above Candidates</a></button>
+    <button class="voteme bg-blue-500 text-white px-4 py-2 rounded-full" ><a href="/Reverification">Vote for the Above Candidates</a></button>
   
     <script>
         let candidates = document.getElementsByClassName("candidates");
@@ -87,7 +87,6 @@
         for (let i = 1; i <= random; i++) {
             yo += card;
         }
-
         candidates[0].innerHTML = yo;
     </script>
     
