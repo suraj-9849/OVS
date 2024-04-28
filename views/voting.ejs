@@ -6,10 +6,8 @@
     <title>Voting Details-Online Voting System</title>
     <style>
 
-
-
       .card {
-        width: 250px;
+        width: 350px;
         height: 300px;
         background-image: linear-gradient(
           144deg,
@@ -19,7 +17,7 @@
         );
         border: none;
         border-radius: 10px;
-        padding: 10px;
+        
         position: relative;
         margin: auto;
         font-family: inherit;
@@ -44,12 +42,13 @@
       }
 
       .card .img {
-        width: 70px;
-        height: 70px;
-        background: #e8e8e8;
+        width: 100px;
+        height: 100px;
         border-radius: 100%;
         margin: auto;
         margin-top: 20px;
+        padding: 10px;
+        border-radius: 50%;
       }
 
       .card button {
@@ -67,6 +66,11 @@
       .card button:hover {
         background: #212121;
         color: #ffffff;
+      }
+      img{
+        height:100px;
+        width: 100px;
+        border-radius: 50%;
       }
     </style>
 
@@ -95,6 +99,7 @@
       console.log(state);
       let candidatesContainer = document.querySelector(".candidates");
       let candidates = "";
+      let imageLinks = "";
       let stateName = state.toLowerCase().substring(14, val);
       console.log(stateName);
       if (stateName == "telangana") {
@@ -107,6 +112,24 @@
           "KUNA PANDU VIVEKANAND",
           "CHAMAKURA MALLA REDDY",
         ];
+        imageLinks = [
+
+        "https://imgs.search.brave.com/DnANXvJmjF7GeNDQfQKNjzyGdglFVb6IYigsPIf2kIw/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zdGFy/c3VuZm9sZGVkLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/My8xMi9SZXZhbnRo/LVJlZGR5LmpwZw",
+
+"https://imgs.search.brave.com/9XFixcIVclrcXQeIBfVWG45k64zCN1JE1VEBWQ-t2Sw/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93aWtp/YmlvLmluL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE4LzEyL0st/Q2hhbmRyYXNoZWth/ci1SYW8tMS5qcGc",
+
+"https://imgs.search.brave.com/FVXAaUfPFHM1dF0oeqTPQsTaynCP61ldNtkknoXSf9I/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9h/L2FjL1NhbmpheV9C/YW5kaV9CanAucG5n",
+
+
+"https://imgs.search.brave.com/NAXwcWtY3f9w5nS4rGqByORsyhhNTdR7IGrVAhTHWAE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy80/LzQxL0suVC5SYW1h/cmFvLUlUX01pbmlz/dGVyX29mX1RlbGFu/Z2FuYS5qcGc",
+
+"https://imgs.search.brave.com/_bRIE6FP1GFyXen3c5RNbVq8Igl_UItlfs79V1nhEuE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk16QmhOV1E0/WlRBdE5UTm1OaTAw/T1Raa0xXSmpaall0/WXpJME5qWmtOV1E0/TVdSalhrRXlYa0Zx/Y0dkZVFYVnlORFV6/T1RRNU1qWUAuanBn",
+
+"https://imgs.search.brave.com/16Cu8eQRVQED4DDnS97QvWGSATodJWqJdN-M4J1RPdQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/dmVldGhpLmNvbS9p/bWFnZXMvcGVvcGxl/L3Byb2ZpbGUvUmFq/ZXNoX1Zlcm1hXyhw/b2xpdGljaWFuKS5q/cGVn",
+
+"https://imgs.search.brave.com/mtU9V320z-vVH8I7MzM8sR547OL_slHd98sksYxPlHE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/bTkubmV3cy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8xMS9N/aW5pc3Rlci1NYWxs/YS1SZWRkeS5qcGc"
+
+];
       } else if (
         stateName == "andhrapradesh" ||
         stateName == "andhra-pradesh"
@@ -140,7 +163,7 @@
       for (let i = 0; i < random; i++) {
         card += `<div class="card">
                           <div class="card-border-top"></div>
-                          <div class="img"></div>
+                          <div class="img"><img src="${imageLinks[i]}" alt=""></div>
                           <span >${candidates[i]}</span>
                           <p class="job">MLA</p>
                           <button>
