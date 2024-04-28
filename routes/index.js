@@ -63,4 +63,9 @@ router.get('/LastVoting', function (req, res, next) {
   res.render('LastVoting', { random: random, stateName: stateName });
 });
 
+router.get('/VoteCasted', function (req, res, next) {
+  res.render('VoteCast');
+});
+
+
 module.exports = router;

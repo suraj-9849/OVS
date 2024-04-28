@@ -8,6 +8,14 @@
     <style>
       body {
   background: linear-gradient(135deg, orange 60%, cyan);
+
+}
+
+h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
       .card {
         width: 190px;
@@ -109,7 +117,7 @@
           "Lokesh",
           "BalaKrishna",
           "Ambati rambabu",
-          "Atcha nnaidu",
+          "Atcham naidu",
         ];
       } else {
         candidates = [
@@ -131,11 +139,25 @@
           <div class="img"></div>
           <span class = 'uppercase'> ${candidates[i]} </span>
           <p class="job"> MLA </p>
-          <button> Vote </button>
+          <button class='vote-btn'> Vote </button>
       </div>`;
       }
       
       candidatesContainer.innerHTML = yo;
+      let votebtns = document.querySelectorAll('.vote-btn');
+
+votebtns.forEach(button => {
+    button.addEventListener('click', function() {
+        votebtns.forEach(otherButton => {
+            if (otherButton !== button) {
+              otherButton.style.display = 'none';
+            }
+        });
+        setTimeout(function() { 
+          window.location.href = '/VoteCasted'
+        }, 3000);
+    });
+});
   </script>
   </body>
 </html>
